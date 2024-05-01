@@ -1,0 +1,14 @@
+ÁRBOL DE COMPONENTES DE MI POKEAPP (sujeto a cambios)
+App --> App.jsx
+    Header --> Header.jsx
+        Logo
+        Nav
+            Link*3
+    MainComponent --> MainComponent.jsx
+         ListaPokemon--> Search/ListPokemon.jsx <section>
+            PokemonCard--> PokemonCard.jsx <article>
+            PokemonCard
+            PokemonCard
+         CardDetails-->CardDetails.jsx <article>
+         NewPokemon-->NewPokemon.jsx Form/newpokemonregistred
+    Footer --> Footer.jsx --> <footer>
