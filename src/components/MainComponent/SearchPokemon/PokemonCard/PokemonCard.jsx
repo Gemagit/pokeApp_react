@@ -2,10 +2,10 @@ import React from 'react';
 
 const PokemonCard = ({ name, imageURL }) => {
   return (
-    <div className="pokemon-item">
+    <article className="pokemoncard">
       <img src={imageURL} alt={name} />
       <span>{name}</span>
-    </div>
+    </article>
   );
 };
 
