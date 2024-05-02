@@ -28,20 +28,21 @@ const SearchPokemon = () => {
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
+    <section className='sectionsearch'>
+      <h2>Busca un Pokemon</h2>
+      <form className="search" onSubmit={handleSubmit}>
         <input 
           ref={inputRef} 
-          placeholder="Busca tu Pokémon por nombre" 
+          placeholder="Elige tu Pokemon favorito" 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button type="submit">Buscar</button>
       </form>
-      {isLoading ? (
+     {isLoading ? (
         <p>Cargando...</p>
       ) : (
-        <div>
+        <article>
           {filteredPokemons.length > 0 ? (
             <div>
               <h3>{filteredPokemons[0].name}</h3>
@@ -53,8 +54,8 @@ const SearchPokemon = () => {
           ) :
             <p>No se encontró ningún Pokémon con ese nombre.</p>
           }
-        </div>
-      )}
+        </article>
+      )}  
     </section>
   );
 };

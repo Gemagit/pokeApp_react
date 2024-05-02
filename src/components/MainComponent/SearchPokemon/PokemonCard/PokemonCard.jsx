@@ -3,8 +3,8 @@ import React from 'react';
 const PokemonCard = ({ name, imageURL }) => {
   return (
     <article className="pokemoncard">
-      <img src={imageURL} alt={name} />
-      <span>{name}</span>
+      <img src={imageURL} alt={name} width={"120px"}/>
+      <p>{name}</p>
     </article>
   );
 };
