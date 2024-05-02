@@ -1,0 +1,8 @@
+@import "../utils/mixins.scss";
+
+.main{
+    min-height:74vh;
+    width:100%;
+    height: auto;
+    @include centered-content;
+}
