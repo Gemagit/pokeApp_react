@@ -1,9 +1,9 @@
 import React from "react";
-//import bolaIcon from "../../../assets/icono_bola"
+//import icono_bola from "../../../assets/icono_bola.png"
 
 const Footer = () => {
   return <footer>
-    {/* <img src={`${bolaIcon}`} alt="iconbola" width="24px" />  */}
+   {/* <label for="menu"><img src={`${icono_bola}`} alt="burger" width="24px" /></label> */}
   </footer>;
 };
 

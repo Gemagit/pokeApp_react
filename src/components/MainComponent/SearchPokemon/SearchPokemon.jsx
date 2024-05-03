@@ -1,64 +1,78 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PokemonCard from "./PokemonCard"
+import React, { useState, useEffect, useContext } from 'react';
+import { PokemonContext } from "../../../context/PokemonContext";
+import debounce from 'lodash.debounce';
 
-const SearchPokemon = () => {
+function SearchPokemon() {
+  const { setPokemonList } = useContext(PokemonContext);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const inputRef = useRef(null);
+  const [foundPokemon, setFoundPokemon] = useState(null);
+
+  useEffect(() => {
+    const searchPokemon = async () => {
+      if (!searchTerm.trim()) return;
+
+      try {
+        setIsLoading(true); // Marcar como cargando mientras se realiza la búsqueda
+
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
+        const data = await response.json();
+
+        setFoundPokemon({ name: data.name, image: data.sprites.front_default }); // Almacenar el Pokemon encontrado
+        setPokemonList(prevList => [...prevList, {id: data.id, name: data.name, image: data.sprites.front_default }]);
+        setSearchTerm(''); // Vacia el input después de la búsqueda del pokemon
+      } catch (error) {
+        console.error('Error searching pokemon:', error);
+      } finally {
+        setIsLoading(false); // Marcar como no cargando cuando la búsqueda ha terminado
+      }
+    };
+
+    const debouncedSearchPokemon = debounce(searchPokemon, 1500);
+    debouncedSearchPokemon();
+
+    return () => {
+      debouncedSearchPokemon.cancel();
+    };
+  }, [searchTerm, setPokemonList]);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    const fetchPokemons = async () => {
-      try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}`);
-        const data = await response.json();
-        // simular retardo de llamada a API
-        await new Promise((resolve, reject) => setTimeout(resolve, 2000));
-        setFilteredPokemons([data]);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error al obtener el Pokémon:', error);
-        setFilteredPokemons([]);
-        setIsLoading(false);
-      }
-    };
-    fetchPokemons();
-  };
+    searchPokemon();
+    setSearchTerm('');
+  }
 
   return (
     <section className='sectionsearch'>
-      <h2>Busca un Pokemon</h2>
       <form className="search" onSubmit={handleSubmit}>
-        <input 
-          ref={inputRef} 
-          placeholder="Elige tu Pokemon favorito" 
+        <h2>Encuentra un Pokemon</h2>
+        <input
+          type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleChange}
+          placeholder="Buscar Pokemon"
         />
         <button type="submit">Buscar</button>
       </form>
-     {isLoading ? (
+      {isLoading ? (
         <p>Cargando...</p>
-      ) : (
+      ) : foundPokemon ? (
         <article>
-          {filteredPokemons.length > 0 ? (
-            <div>
-              <h3>{filteredPokemons[0].name}</h3>
-              <PokemonCard
-                name={filteredPokemons[0].name}
-                imageURL={filteredPokemons[0].sprites.front_default}
-              />
-            </div>
-          ) :
-            <p>No se encontró ningún Pokémon con ese nombre.</p>
-          }
+          <div>
+            <h3>{foundPokemon.name}</h3>
+            <p>{foundPokemon.id}</p>
+            <img src={foundPokemon.image} alt={foundPokemon.name} />
+          </div>
         </article>
-      )}  
+      ) : 
+          <p>No se encontró ningún Pokémon con ese nombre.</p>
+      }
     </section>
   );
-};
+}
 
 export default SearchPokemon;
-

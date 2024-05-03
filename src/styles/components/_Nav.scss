@@ -3,6 +3,7 @@
 .nav {
     width: 100%;
     position: relative;
+    border: 2px solid $black;
 
     //Menu hamburguesa
     &>input {
@@ -30,7 +31,6 @@
 
         &>li {
             margin:20px;
-            border-radius: 4px;
             margin:30px;
 
             &:hover {

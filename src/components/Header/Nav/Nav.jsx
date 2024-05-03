@@ -7,7 +7,7 @@ const Nav = () => {
     <label for="menu"><img src={`${burgerIcon}`} alt="burger" width="24px" /></label>
     <ul>
       <li><Link className="letrasnav"to='/'>Home</Link></li>
-      <li><Link className="letrasnav"to='/pokemon:id'>Details</Link></li>
+      {/* <li><Link className="letrasnav"to='/pokemon:id'></Link></li> */}
       <li><Link className="letrasnav"to='/new'>Create a Pokemon</Link></li>
     </ul>
   </nav>;

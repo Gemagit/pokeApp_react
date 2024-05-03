@@ -15,23 +15,53 @@ const NewPokemon = () => {
     <section className="creapokemon">
       <h2>Crea tu propio Pokemon</h2>
       <form className="creaform" onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          ID:  <input type="number" {...register('id', { required: true })} />
+        <label htmlFor="id">ID:
+          <input
+            id="id"
+            type="number"
+            {...register('id', { required: true })}
+          />
         </label>
-        <label>
-          Nombre:  <input type="text" {...register('name', { required: true, minLength: 3 })} />
+
+        <label htmlFor="name">
+          Nombre:
+          <input
+            id="name"
+            type="text"
+            {...register('name', { required: true, minLength: 3 })}
+          />
         </label>
-        <label>
-          Imagen:  <input type="text" {...register('image', { required: true })} />
+
+        <label htmlFor="image">
+          Imagen:
+          <input
+            id="image"
+            type="text"
+            {...register('image', { required: true })}
+          />
         </label>
-        <label>
-          Tipo 1:  <input type="select" {...register('typeOne', { required: true })} />
+
+        <label htmlFor="typeOne">
+          Tipo 1:
+          <input
+            id="typeOne"
+            type="text"
+            {...register('typeOne', { required: true })}
+          />
         </label>
-        <label>
-          Tipo 2:  <input type="select" {...register('typeTwo', { required: true })} />
+
+        <label htmlFor="typeTwo">
+          Tipo 2:
+          <input
+            id="typeTwo"
+            type="text"
+            {...register('typeTwo', { required: true })}
+          />
         </label>
-        <button className="botoncrear" type="submit">Crear Pokemon</button>
+
+        <button type="submit">Crear Pokemon</button>
       </form>
+
 
       <div className="validacion">
         {errors.id && <span className="error-message">Introduzca una Id por favor</span>}
@@ -51,8 +81,6 @@ const NewPokemon = () => {
           <p>{pokemon.typeTwo}</p>
         </article>
       ))}
-
-
     </section>
   );
 };
