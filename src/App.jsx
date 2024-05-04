@@ -1,22 +1,26 @@
-//import { useState } from 'react'
 import './App.css'
 import "./styles/styles.scss";
+import { BrowserRouter as Router } from "react-router-dom";
+import { PokemonContext } from './context/PokemonContext';
+import {useState} from 'react'
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainComponent from "./components/MainComponent";
-import { BrowserRouter } from "react-router-dom";
 
 
 function App() {
+  const [pokemonList, setPokemonList]= useState([]);//aquí voy a almacenar la lista de los pokemons
 
 
   return (
     <>
-    <BrowserRouter>
+    <Router>
+    <PokemonContext.Provider value={{ pokemonList, setPokemonList }}>
       <Header />
-      <MainComponent />
-      </BrowserRouter>
+      <MainComponent/>
       <Footer />
+      </PokemonContext.Provider>
+      </Router>
     </>
   )
 }
