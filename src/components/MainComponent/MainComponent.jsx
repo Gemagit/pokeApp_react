@@ -9,16 +9,14 @@ function MainComponent({pokemonList, setPokemonList}) {
   
   return (
     <main className="main">
-      <Routes>
-        <Route path="/" element={<SearchPokemon pokemonList={pokemonList} setPokemonList={setPokemonList}/>} />
-        <Route path="*" element={<SearchPokemon setPokemonList={setPokemonList} />}/>
-        <Route path="/pokemon/:id" element={<DetailsPokemon />} />
-        <Route path="/new" element={<NewPokemon/>} /> 
-        <Route path="/*" element={<Navigate to={"/"} />} />
-      </Routes>
-      <ListaPokemon pokemonList={pokemonList} />
-
-    </main>
+    <Routes>
+      <Route path="/" element={<SearchPokemon pokemonList={pokemonList} setPokemonList={setPokemonList}/>} />
+      <Route path="/" element={<ListaPokemon pokemonList={pokemonList} />} />
+      <Route path="/pokemon/:id" element={<DetailsPokemon />} />
+      <Route path="/new" element={<NewPokemon/>} /> 
+      <Route path="/*" element={<Navigate to={"/"} />} />
+    </Routes>
+  </main>
   );
 }
 

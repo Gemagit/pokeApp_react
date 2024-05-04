@@ -63,13 +63,16 @@ const NewPokemon = () => {
       </form>
 
 
-      <div className="validacion">
-        {errors.id && <span className="error-message">Introduzca una Id por favor</span>}
-        {errors.name && <span className="error-message">El nombre es requerido</span>}
-        {errors.name && errors.name.type === "minLength" && <span className="error-message">El nombre debe tener al menos 3 caracteres</span>}
-        {errors.image && <span className="error-message">La imagen es requerida</span>}
-        {errors.typeOne && <span className="error-message">Tipo 1 es requerido</span>}
-      </div>
+      {Object.keys(errors).length > 0 && (
+  <article className="validacion">
+    {errors.id && <span className="error-message">¡¡Introduzca una Id por favor!!</span>}
+    {errors.name && <span className="error-message">El nombre es requerido</span>}
+    {errors.name && errors.name.type === "minLength" && <span className="error-message">El nombre debe tener al menos 3 caracteres</span>}
+    {errors.image && <span className="error-message">La imagen es requerida</span>}
+    {errors.typeOne && <span className="error-message">Tipo 1 es requerido</span>}
+    {errors.typeTwo && <span className="error-message">Tipo 2 es requerido</span>}
+  </article>
+)}
 
 
 
