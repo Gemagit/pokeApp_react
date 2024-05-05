@@ -56,8 +56,11 @@ Os cuento un poco como funciona PokeApp. Cuando abres la app,encuentras dos enla
 
 Éste hace una llamada a la Api de Pokemon y pinta una Card con el nombre y la imagen del pokemon buscado. Puedes ir acumulando una lista de personajes buscados.
 
-
 ![listaPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/984ae7cf-4f79-4024-bc80-1de4e1db865c)
+
+Pero eso sí, no intentes buscar el mismo personaje porque te aparcerá un alert avisándote de que el personaje ya está en la lista.
+
+![pokemonrepe](https://github.com/Gemagit/pokeApp_react/assets/143506667/3124ea6d-bc1d-4eb8-9ae4-50f852d3a5b1)
 
 En la parte derecha de cada tarjeta, hay un botón en el que pone: *Más info*.
 
