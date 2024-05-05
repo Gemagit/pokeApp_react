@@ -44,9 +44,24 @@ En primer lugar diseñé un esquema con cada una de las vistas y sus respectivos
 
 ![pokemonappcomponentesok](https://github.com/Gemagit/pokeApp_react/assets/143506667/6f490523-809d-45e3-92ae-fc30f7bc2dfe)
 
-También he tenido que instalarme algunas dependencias nuevas que me han permitido que mi app sea más funcional. Os muestro aquí cuales son las dependencias necesarias si necesitáis utilizar mi proyecto. Tendríais que ejecutar en el comando de la terminal **npm install dependencia**.
+También he tenido que instalarme algunas dependencias nuevas que me han permitido que mi app sea más funcional. Os muestro aquí cuales son las dependencias necesarias si necesitáis utilizar mi proyecto. Tendríais que ejecutar en el comando de la terminal **npm install (dependencia que necesitéis)**.
 
 ![dependencias](https://github.com/Gemagit/pokeApp_react/assets/143506667/394529c7-3f9b-42c2-a081-854afd190793)
+
+Os cuento un poco como funciona PokeApp. Cuando abres la app,encuentras dos enlaces. Uno, que es la *Home*, en la que vemos el buscador de Pokemon. 
+
+![encuentraPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/74deb3b5-8479-4a1e-a1c4-107f0afb9b30)
+
+Éste hace una llamada a la Api de Pokemon y pinta una Card con el nombre y la imagen del pokemon buscado. Puedes ir acumulando una lista de personajes buscados.
+
+
+![listaPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/984ae7cf-4f79-4024-bc80-1de4e1db865c)
+
+En la parte derecha de cada tarjeta, hay un botón en el que pone: *Más info*.
+
+![masInfo](https://github.com/Gemagit/pokeApp_react/assets/143506667/335cd329-3c17-4039-b7a0-dfdc9647d162)
+
+Este te lleva a otra vista con las propiedades más relevantes de ese Pokemon.
 
 Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
 
