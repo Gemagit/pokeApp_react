@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Os presento mi primer proyecto de React. Un ejercicio propuesto en clase en el que podré poner en práctica lo que he aprendido en clase. Consta de un buscador de Pokemon y un formulario para crear tu propio Pokemon personalizado.
+Os presento mi primer proyecto de React. Un ejercicio propuesto en clase en el que pongo en práctica mis conocimientos de React. PokeApp es una aplicación web que consta de un buscador de Pokemons y un formulario para crear tu propio Pokemon personalizado.
 
 ## Table of Contents
 1. Mobile First
@@ -28,15 +28,19 @@ Hay que destacar la importancia que tiene hoy en día **"mobile-first"**, con el
 
 ## 2. Tecnologies
 
-Las tecnologías usadas en este quiz son las siguientes:
+Las tecnologías usadas en esta app son las siguientes:
+
 1. HTML
 2. CSS
 3. JAVASCRIPT
+4. REACT
+5. NETIFLY
+6. GITHUB
 
 
 ## 3. Features
 
-En primer lugar diseñé un esquema con cada una de las vistas y sus respectivos componentes. Lo más importante al empezar un proyecto de cero es tener claro quién será el Provider y quiénes serán los consumidores. Has de saber también qué vistas tendrás y número de enlaces que tendrá tu aplicación web.  
+En primer lugar diseñé un esquema con cada una de las vistas y sus respectivos componentes. Lo más importante al empezar un proyecto en *React* de cero es tener claro quién será el Provider y quiénes serán los consumidores. Has de saber también qué vistas tendrás y número de enlaces que tendrá tu aplicación web.  
 
 ![pokemonappcomponentesok](https://github.com/Gemagit/pokeApp_react/assets/143506667/6f490523-809d-45e3-92ae-fc30f7bc2dfe)
 
@@ -49,13 +53,11 @@ Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo
 
 ## 4. Design
 
-Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros.
+Se trata de un diseño web muy sencillo. He querido utilizar la tonalidad de la bola mítica de Pokemon y los colores del famoso Pikachu. 
 
 ![PIKACHU](https://github.com/Gemagit/pokeApp_react/assets/143506667/1a220fc8-0317-4b76-8b65-443bddf4a6c0)
 
 Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
 
-
-
-## [Pulsa aquí para visitar mi proyecto recipApi](https://gemagit.github.io/recipApi/)
+## [Pulsa aquí para visitar mi proyecto recipApi]()
