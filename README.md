@@ -36,11 +36,12 @@ Las tecnologías usadas en este quiz son las siguientes:
 
 ## 3. Features
 
-En primer lugar diseñé un árbol de componentes e hice un esquema con cada una de las vistas y sus respectivos componentes.
+En primer lugar diseñé un esquema con cada una de las vistas y sus respectivos componentes. Lo más importante al empezar un proyecto de cero es tener claro quién será el Provider y quiénes serán los consumidores. Has de saber también qué vistas tendrás y número de enlaces que tendrá tu aplicación web.  
 
 ![pokemonappcomponentesok](https://github.com/Gemagit/pokeApp_react/assets/143506667/6f490523-809d-45e3-92ae-fc30f7bc2dfe)
 
 
+![dependencias](https://github.com/Gemagit/pokeApp_react/assets/143506667/394529c7-3f9b-42c2-a081-854afd190793)
 
 Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
 
@@ -50,6 +51,7 @@ Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo
 
 Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros.
 
+![PIKACHU](https://github.com/Gemagit/pokeApp_react/assets/143506667/1a220fc8-0317-4b76-8b65-443bddf4a6c0)
 
 Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
