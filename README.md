@@ -65,7 +65,15 @@ En la parte derecha de cada tarjeta, hay un botón en el que pone: *Más info*.
 
 Este te lleva a otra vista con las propiedades más relevantes de ese Pokemon.
 
-Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
+![detalles](https://github.com/Gemagit/pokeApp_react/assets/143506667/fef0f2c9-bd11-47da-92ae-21c55234041b)
+
+Ahora vamos a la parte más creativa de la web. Si pulsamos en *Create a Pokemon* nos llevará a un formulario en el que podrás crear un Pokemon personalizado. Podrás acumular tantos Pokemons nuevos como desees. 
+
+![creaPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/2c223dcb-6cce-41de-81ec-4af00393438c)
+
+![pokemonCreados](https://github.com/Gemagit/pokeApp_react/assets/143506667/526b2107-153b-4d49-be51-a1d576a6e7d9)
+
+Me gustaría seguir implementando funcionalidades a este proyecto, como el Firebase pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
 
 
 
