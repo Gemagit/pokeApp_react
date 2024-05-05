@@ -5,7 +5,8 @@ App --> App.jsx
         Nav
             Link*3
     MainComponent --> MainComponent.jsx
-         ListaPokemon--> Search/ListPokemon.jsx <section>
+         SearchPokemon-->SearchPokemon.jsx
+         ListaPokemon--> ListPokemon.jsx <section>
             PokemonCard--> PokemonCard.jsx <article>
             PokemonCard
             PokemonCard

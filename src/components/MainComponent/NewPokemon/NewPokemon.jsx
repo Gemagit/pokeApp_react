@@ -13,8 +13,8 @@ const NewPokemon = () => {
 
   return (
     <section className="creapokemon">
-      <h2>Crea tu propio Pokemon</h2>
       <form className="creaform" onSubmit={handleSubmit(onSubmit)}>
+      <h2>Crea tu propio Pokemon</h2>
         <label htmlFor="id">ID:
           <input
             id="id"
@@ -77,7 +77,7 @@ const NewPokemon = () => {
 
 
       {pokemonList.map((pokemon, index) => (
-        <article key={index}>
+        <article className="newcard" key={index}>
           <img src={pokemon.image} alt={pokemon.name} width={"50px"} />
           <p>{pokemon.name}</p>
           <p>{pokemon.typeOne}</p>
