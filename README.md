@@ -73,6 +73,10 @@ Ahora vamos a la parte más creativa de la web. Si pulsamos en *Create a Pokemon
 
 ![pokemonCreados](https://github.com/Gemagit/pokeApp_react/assets/143506667/526b2107-153b-4d49-be51-a1d576a6e7d9)
 
+Si intentas crear un Pokemon y no has rellenado alguno de los campos requeridos, te saldrá un mensaje de validación. 
+
+![pokemonCreados](https://github.com/Gemagit/pokeApp_react/assets/143506667/08fa9290-8215-4e87-b39f-8e294a1908dd)
+
 Me gustaría seguir implementando funcionalidades a este proyecto, como el Firebase pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
 
 
