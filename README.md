@@ -75,10 +75,9 @@ Ahora vamos a la parte más creativa de la web. Si pulsamos en *Create a Pokemon
 
 Si intentas crear un Pokemon y no has rellenado alguno de los campos requeridos, te saldrá un mensaje de validación. 
 
-![pokemonCreados](https://github.com/Gemagit/pokeApp_react/assets/143506667/08fa9290-8215-4e87-b39f-8e294a1908dd)
+![validacion](https://github.com/Gemagit/pokeApp_react/assets/143506667/ef92ddef-31a3-4c81-8946-db0b58185ef3)
 
 Me gustaría seguir implementando funcionalidades a este proyecto, como el Firebase pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
-
 
 
 ## 4. Design
@@ -86,6 +85,11 @@ Me gustaría seguir implementando funcionalidades a este proyecto, como el Fireb
 Se trata de un diseño web muy sencillo. He querido utilizar la tonalidad de la bola mítica de Pokemon y los colores del famoso Pikachu. 
 
 ![PIKACHU](https://github.com/Gemagit/pokeApp_react/assets/143506667/1a220fc8-0317-4b76-8b65-443bddf4a6c0)
+
+Otro detalle creativo es que he convertido el menú clásico hamburguesa, en una hamburBola. Cuando estás en la versión adapatada a móvil, al pulsar la bola, se despliega el menú.
+
+
+![hamburBola](https://github.com/Gemagit/pokeApp_react/assets/143506667/834b316c-d2d0-4498-94c3-2f13cdc63eb6)
 
 Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
