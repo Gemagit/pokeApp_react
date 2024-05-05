@@ -96,5 +96,3 @@ Otro detalle creativo es que he convertido el menú clásico hamburguesa, en una
 
 Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
-
-## [Pulsa aquí para visitar mi proyecto PokeApp]()
