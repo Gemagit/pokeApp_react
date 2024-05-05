@@ -50,7 +50,7 @@ También he tenido que instalarme algunas dependencias nuevas que me han permiti
 
 Os cuento un poco como funciona PokeApp. Cuando abres la app,encuentras dos enlaces. Uno, que es la *Home*, en la que vemos el buscador de Pokemon. 
 
-![ipad](https://github.com/Gemagit/pokeApp_react/assets/143506667/cab25116-392e-4c71-ab76-529e29c4a33a)
+![ipad](https://github.com/Gemagit/pokeApp_react/assets/143506667/763453a8-95ed-430e-8077-786b4dfcfb9d)
 
 ![encuentraPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/74deb3b5-8479-4a1e-a1c4-107f0afb9b30)
 
