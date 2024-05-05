@@ -44,7 +44,7 @@ En primer lugar diseñé un esquema con cada una de las vistas y sus respectivos
 
 ![pokemonappcomponentesok](https://github.com/Gemagit/pokeApp_react/assets/143506667/6f490523-809d-45e3-92ae-fc30f7bc2dfe)
 
-También he tenido que instalarme algunas dependencias nuevas que me han permitido que me app sea más funcional. Os muestro aquí cuales son las dependencias necesarias si necesitas utilizar mi proyecto. Tendrías que ejecutar en el comando de la terminal **npm install <dependencia>**.
+También he tenido que instalarme algunas dependencias nuevas que me han permitido que mi app sea más funcional. Os muestro aquí cuales son las dependencias necesarias si necesitáis utilizar mi proyecto. Tendríais que ejecutar en el comando de la terminal **npm install dependencia**.
 
 ![dependencias](https://github.com/Gemagit/pokeApp_react/assets/143506667/394529c7-3f9b-42c2-a081-854afd190793)
 
