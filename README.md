@@ -50,6 +50,8 @@ También he tenido que instalarme algunas dependencias nuevas que me han permiti
 
 Os cuento un poco como funciona PokeApp. Cuando abres la app,encuentras dos enlaces. Uno, que es la *Home*, en la que vemos el buscador de Pokemon. 
 
+![ipad](https://github.com/Gemagit/pokeApp_react/assets/143506667/cab25116-392e-4c71-ab76-529e29c4a33a)
+
 ![encuentraPokemon](https://github.com/Gemagit/pokeApp_react/assets/143506667/74deb3b5-8479-4a1e-a1c4-107f0afb9b30)
 
 Éste hace una llamada a la Api de Pokemon y pinta una Card con el nombre y la imagen del pokemon buscado. Puedes ir acumulando una lista de personajes buscados.
