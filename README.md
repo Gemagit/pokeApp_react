@@ -34,7 +34,7 @@ Las tecnologías usadas en esta app son las siguientes:
 2. CSS
 3. JAVASCRIPT
 4. REACT
-5. NETIFLY
+5. NETLIFY
 6. GITHUB
 
 
