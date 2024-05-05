@@ -2,8 +2,23 @@
 
 .nav {
     width: 100%;
+    height: 130px;
     position: relative;
     border: 2px solid $black;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: $red;
+
+    &>label {
+      margin-top: 30px;
+      text-align: left;
+
+      img {
+        width: 80px;
+        margin-left: 60px;
+    }
+    }
 
     //Menu hamburguesa
     &>input {
@@ -20,18 +35,14 @@
         left: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         list-style: none;
         display: none;
         background-color: $red;
         width: 100%;
-        height: 100px;
-        z-index: 2;
-        text-align: center;
 
         &>li {
-            margin:20px;
-            margin:30px;
+            margin:30px 50px 30px 30px;
 
             &:hover {
                 background-color: $blue;
@@ -53,8 +64,14 @@
 }
 
 
+
 @media only screen and (min-width: 720px) {
     .nav {
+        height: auto;
+        width: 100%;
+        position: relative;
+        border: 2px solid $black;
+        background-color: $red;
 
         &>label {
             display: none;
@@ -64,11 +81,26 @@
             position: static;
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $red;
 
             &>li {
                 font-size: 8px;
-
+                margin-left: 100px;
             }
         }
     }
+}
+
+@media only screen and (min-width: 1200px) {
+    .nav {
+        width: 100%;
+        font-size: 14px; 
+      }
+    
+      .nav > ul > li {
+        font-size: 12px; 
+      }
+    
 }

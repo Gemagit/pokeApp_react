@@ -1,46 +1,63 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { PokemonContext } from "../../../context/PokemonContext";
-import debounce from 'lodash.debounce';
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import { PokemonContext } from '../../../context/PokemonContext';
+//import { debounce } from 'lodash';
 import ListaPokemon from '../ListaPokemon';
 
 function SearchPokemon() {
-  const { setPokemonList } = useContext(PokemonContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const { setPokemonList } = useContext(PokemonContext);
 
-  useEffect(() => {
-    const debouncedSearchPokemon = debounce(searchPokemon, 3000);
-    if (searchTerm.trim()) {
-      debouncedSearchPokemon();
-    }
-    return () => {
-      debouncedSearchPokemon.cancel();
-    };
-  }, [searchTerm]);
-
-  const searchPokemon = async () => {
+  const searchPokemon = async (searchTerm) => {
     try {
-      setIsLoading(true); // Marcar como cargando mientras se realiza la búsqueda
-
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
-      const data = await response.json();
-
-      setPokemonList(prevList => [...prevList, {id: data.id, name: data.name, image: data.sprites.front_default }]);
-      setSearchTerm(''); // Vaciar el input después de la búsqueda del Pokémon
+      setIsLoading(true);
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
+      const data = response.data;
+  
+      const newPokemon = {
+        id: data.id,
+        name: data.name,
+        image: data.sprites.front_default,
+        weight: data.weight,
+        height: data.height,
+        typeOne: data.types[0].type.name,
+        abilities: data.abilities[0].ability.name
+      };
+  
+      // Use the useContext hook to access the current list of Pokemon
+      setPokemonList(prevList => {
+        // Check if the Pokemon already exists in the list based on its id
+        const exists = prevList.some(pokemon => pokemon.id === newPokemon.id);
+        if (exists) {
+          alert("El pokemon ya esta en la lista");
+          return prevList; // Return the unchanged list if the Pokemon is already there
+        } else {
+          return [...prevList, newPokemon]; // Add the new Pokemon to the list
+        }
+      });
+  
     } catch (error) {
-      console.error('Error searching pokemon:', error);
+      alert('Ese Pokemon no existe');
     } finally {
-      setIsLoading(false); // Marcar como no cargando cuando la búsqueda ha terminado
+      setIsLoading(false);
+      setSearchTerm(''); // Clear the input after search
     }
   };
 
+  //const debouncedSearchPokemon = debounce(searchPokemon, 5000);
+
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    const value = event.target.value;
+    setSearchTerm(value);
+    //debouncedSearchPokemon(value); // Llamar a la función de búsqueda con debounce
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearchTerm('');
+    if (searchTerm.trim()) {
+      searchPokemon(searchTerm);
+    }
   }
 
   return (
@@ -55,94 +72,10 @@ function SearchPokemon() {
         />
         <button type="submit">Buscar</button>
       </form>
-      <ListaPokemon searchTerm={searchTerm} />
+      <ListaPokemon />
     </section>
   );
 }
 
 export default SearchPokemon;
 
-
-
-
-/* import React, { useState, useEffect, useContext } from 'react';
-import { PokemonContext } from "../../../context/PokemonContext";
-import debounce from 'lodash.debounce';
-import ListaPokemon from '../ListaPokemon/ListaPokemon';
-
-function SearchPokemon() {
-  const { setPokemonList } = useContext(PokemonContext);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [foundPokemon, setFoundPokemon] = useState(null);
-
-  useEffect(() => {
-    const searchPokemon = async () => {
-      if (!searchTerm.trim()) return;
-
-      try {
-        setIsLoading(true); // Marcar como cargando mientras se realiza la búsqueda
-
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
-        const data = await response.json();
-
-        setFoundPokemon({ name: data.name, image: data.sprites.front_default }); // Almacenar el Pokemon encontrado
-        setPokemonList(prevList => [...prevList, {id: data.id, name: data.name, image: data.sprites.front_default }]);
-        setSearchTerm(''); // Vacia el input después de la búsqueda del pokemon
-      } catch (error) {
-        console.error('Error searching pokemon:', error);
-      } finally {
-        setIsLoading(false); // Marcar como no cargando cuando la búsqueda ha terminado
-      }
-    };
-
-    const debouncedSearchPokemon = debounce(searchPokemon, 1500);
-    debouncedSearchPokemon();
-
-    return () => {
-      debouncedSearchPokemon.cancel();
-    };
-  }, [searchTerm, setPokemonList]);
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    searchPokemon();
-    setSearchTerm('');
-  }
-
-  return (
-    <section className='sectionsearch'>
-      <form className="search" onSubmit={handleSubmit}>
-        <h2>Encuentra un Pokemon</h2>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Buscar Pokemon"
-        />
-        <button type="submit">Buscar</button>
-      </form>
-      {isLoading ? (
-        <p>Cargando...</p>
-      ) : foundPokemon ? (
-        <article>
-          <div>
-            <h3>{foundPokemon.name}</h3>
-            <p>{foundPokemon.id}</p>
-            <img src={foundPokemon.image} alt={foundPokemon.name} />
-            <button className="more-info-link">Más info</button>
-          </div>
-        </article> 
-      ) : 
-          <p>No se encontró ningún Pokémon con ese nombre.</p>
-      }
-    </section>
-  );
-}
-
-export default SearchPokemon; */
- 
