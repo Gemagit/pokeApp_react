@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import iconoBola from "/Volumes/fullstack_thebridge/curso_fullstack/REACT/react_web/pokeApp_react/src/assets/icono_bola.png";
+//import iconoBola from "/Volumes/fullstack_thebridge/curso_fullstack/REACT/react_web/pokeApp_react/src/assets/icono_bola.png";
+import iconoBola from "../../../assets/icono_bola.png";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
