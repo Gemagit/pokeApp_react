@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { PokemonContext } from '../../../context/PokemonContext';
-import { debounce } from 'lodash';
+//import { debounce } from 'lodash';
+//import {useDebounce} from "use-debounce";
 import ListaPokemon from '../ListaPokemon';
 
 function SearchPokemon() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { setPokemonList } = useContext(PokemonContext);
+//let debounceTimer=null;//Almacena el identificador del temporizador debounce
 
   const searchPokemon = async (searchTerm) => {
     try {
@@ -45,14 +47,22 @@ function SearchPokemon() {
     }
   };
 
-  const debouncedSearchPokemon = debounce(searchPokemon, 5000);
+  
+  //const debouncedSearchPokemon = debounce(searchPokemon, 5000);
 
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-    debouncedSearchPokemon(value); // Llamar a la función de búsqueda con debounce
+  /*   // Cancela el debounce previo antes de configurar uno nuevo
+    clearTimeout(debounceTimer);
+    // Configura un nuevo debounce
+    debounceTimer = setTimeout(() => {
+      searchPokemon(value);
+    },1500); // Puedes ajustar el tiempo de espera aquí */
   };
+
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
