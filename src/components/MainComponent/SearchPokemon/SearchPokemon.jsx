@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { PokemonContext } from '../../../context/PokemonContext';
-//import { debounce } from 'lodash';
+import { debounce } from 'lodash';
 import ListaPokemon from '../ListaPokemon';
 
 function SearchPokemon() {
@@ -38,19 +38,20 @@ function SearchPokemon() {
       });
   
     } catch (error) {
-      alert('Ese Pokemon no existe');
+      console.log('Ese Pokemon no existe');
     } finally {
       setIsLoading(false);
       setSearchTerm(''); // Clear the input after search
     }
   };
 
-  //const debouncedSearchPokemon = debounce(searchPokemon, 5000);
+  const debouncedSearchPokemon = debounce(searchPokemon, 5000);
+
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-    //debouncedSearchPokemon(value); // Llamar a la función de búsqueda con debounce
+    debouncedSearchPokemon(value); // Llamar a la función de búsqueda con debounce
   };
 
   const handleSubmit = (event) => {
